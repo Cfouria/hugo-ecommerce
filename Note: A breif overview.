@@ -1,0 +1,37 @@
+Definitions
+  folder
+    subfolder, folder in folder
+  file
+  page, anything that displays in browser
+    list, a list of single
+    single, anything not a list
+  chained, one thing includes parts of others
+
+Hugo
+  content folder, don't touch and it will be generated from ponzu by a script file. (currently 'python testImport.ln.py -h')
+  config.toml file, most of the website stuff.
+  static folder, js and css files go here.
+  layout folder, complex and difficult.
+    _default subfolder, a special folder of layout.
+      baseof.html file, all pages will use this. (will be chained with other things)
+      single.html file, used only when content/* does not have matching layout/* single.
+      list.html file, used only when content/* does not have matching layout/* list
+      terms.html file, special page to list all the tags of things in content folder
+    index.html file, home page
+    404.html file, 404 page (not found)
+    * subfolder, will be used on matching subfolder in content folder
+      single.html file, content/products matches layout/products
+      list.html file, layout/* matches content/*
+    partials subfolder, a special folder that contains files that can be chained.
+      * file, file to be chained.
+
+Examples
+  baseof.html < single.html < *partials
+  baseof.html < list.html < *partials
+  baseof.html < *partials < single.html
+  baseof.html < list.html
+
+Explained
+  baseof.html, required for all pages.
+  single.html | list.html, one must be required per page.
+  *partials, can be chained at any time.
