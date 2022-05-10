@@ -1,3 +1,5 @@
+I had to take notes to understand hugo.
+
 Definitions
   folder
     subfolder, folder in folder
@@ -8,7 +10,6 @@ Definitions
   chained, one thing includes parts of others
 
 Hugo
-  content folder, don't touch and it will be generated from ponzu by a script file. (currently 'python testImport.ln.py -h')
   config.toml file, most of the website stuff.
   static folder, js and css files go here.
   layout folder, complex and difficult.
